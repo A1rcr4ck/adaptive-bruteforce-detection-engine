@@ -3,3 +3,8 @@ Jul 10 10:15:33 server sshd[1235]: Failed password for admin from 192.168.1.50 p
 Jul 10 10:15:34 server sshd[1236]: Failed password for root from 192.168.1.50 port 22 ssh2
 Jul 10 10:15:35 server sshd[1237]: Failed password for user1 from 192.168.1.50 port 22 ssh2
 Jul 10 10:15:36 server sshd[1238]: Failed password for user2 from 192.168.1.50 port 22 ssh2
+Jul 10 11:00:01 server sshd[2001]: Failed password for user1 from 192.168.1.99 port 22 ssh2
+Jul 10 11:00:02 server sshd[2002]: Failed password for user2 from 192.168.1.99 port 22 ssh2
+Jul 10 11:00:03 server sshd[2003]: Failed password for user3 from 192.168.1.99 port 22 ssh2
+Jul 10 11:00:04 server sshd[2004]: Failed password for user4 from 192.168.1.99 port 22 ssh2
+Jul 10 11:00:05 server sshd[2005]: Failed password for user5 from 192.168.1.99 port 22 ssh2
