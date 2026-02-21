@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2 class="mb-4">SOC Overview</h2>
+
+<!-- KPI Cards -->
+<div class="row mb-4">
+    <div class="col-md-2">
+        <div class="card kpi-card">
+            <div>Total Logins</div>
+            <div class="kpi-value" id="total_logins">0</div>
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div class="card kpi-card">
+            <div>Failed Logins</div>
+            <div class="kpi-value text-danger" id="failed_logins">0</div>
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div class="card kpi-card">
+            <div>Unique IPs</div>
+            <div class="kpi-value text-info" id="unique_ips">0</div>
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div class="card kpi-card">
+            <div>Open Alerts</div>
+            <div class="kpi-value text-warning" id="open_alerts">0</div>
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div class="card kpi-card">
+            <div>High Severity</div>
+            <div class="kpi-value text-danger" id="high_severity_alerts">0</div>
+        </div>
+    </div>
+</div>
+
+<!-- Charts Row -->
+<div class="row mb-4">
+    <div class="col-md-8">
+        <div class="card p-3">
+            <h5>Failed Login Trend</h5>
+            <canvas id="failedTrendChart"></canvas>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card p-3">
+            <h5>Top Attacking IPs</h5>
+            <canvas id="topIpsChart"></canvas>
+        </div>
+    </div>
+</div>
+
+<!-- Live Alerts Table -->
+<div class="card p-3">
+    <h5>Recent Alerts</h5>
+    <table class="table table-dark table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Type</th>
+                <th>IP</th>
+                <th>Severity</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody id="alertsTable">
+        </tbody>
+    </table>
+</div>
+
+<script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+
+{% endblock %}

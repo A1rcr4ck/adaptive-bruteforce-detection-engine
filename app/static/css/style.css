@@ -1,0 +1,188 @@
+/* iOS-style system font stack */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "San Francisco",
+                 "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    color: #f1f5f9;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 240px;
+    min-height: 100vh;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(15px);
+    border-right: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Sidebar Links */
+.sidebar .nav-link {
+    padding: 10px 15px;
+    border-radius: 8px;
+    transition: 0.3s ease;
+}
+
+.sidebar .nav-link:hover {
+    background: rgba(59, 130, 246, 0.2);
+    transform: translateX(4px);
+}
+
+/* Cards */
+.card {
+    background: rgba(30, 41, 59, 0.6);
+    border-radius: 16px;
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.08);
+    transition: 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+/* KPI Cards */
+.kpi-card {
+    text-align: center;
+    padding: 20px;
+}
+
+.kpi-value {
+    font-size: 32px;
+    font-weight: 600;
+}
+
+/* Improve text contrast */
+h2, h5 {
+    color: #ffffff;
+}
+
+/* Table */
+.table-dark {
+    background-color: rgba(15, 23, 42, 0.8);
+    color: #e2e8f0;
+}
+
+/* KPI Label Text */
+.kpi-card div:first-child {
+    font-size: 14px;
+    font-weight: 500;
+    color: #cbd5e1;   /* Soft but visible */
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+    opacity: 0.9;
+}
+
+/* KPI Value Text */
+.kpi-value {
+    font-size: 34px;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+/* Specific Color Accents */
+#failed_logins {
+    color: #ef4444; /* red */
+}
+
+#unique_ips {
+    color: #22d3ee; /* cyan */
+}
+
+#open_alerts {
+    color: #facc15; /* yellow */
+}
+
+#high_severity_alerts {
+    color: #f43f5e; /* pink-red */
+}
+
+/* Investigation Section Text Fix */
+#alertDetails p,
+#ipProfile p {
+    color: #e2e8f0;   /* brighter soft white */
+    font-size: 15px;
+    font-weight: 500;
+    margin-bottom: 6px;
+}
+
+/* Strong labels */
+#alertDetails strong,
+#ipProfile strong {
+    color: #ffffff;
+    font-weight: 600;
+}
+
+/* Improve headings */
+.card h5 {
+    color: #ffffff;
+    font-weight: 600;
+}
+#eventTable td {
+    color: #f1f5f9;
+}
+
+#eventTable tr:hover {
+    background-color: rgba(59, 130, 246, 0.15);
+}
+
+.card {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Risk Gauge Styling */
+.risk-gauge-wrapper {
+    width: 220px;
+    height: 220px;
+    margin: 0 auto;
+}
+
+#riskGauge {
+    width: 100% !important;
+    height: 100% !important;
+}
+/* Analytics card animation */
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+}
+
+/* Section spacing */
+.card h5 {
+    margin-bottom: 20px;
+}
+.fade-page {
+    animation: fadeInPage 0.6s ease-in-out;
+}
+
+@keyframes fadeInPage {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Fix card text visibility */
+.card {
+    color: #e2e8f0;   /* Light gray for dark UI */
+}
+
+.card p {
+    color: #cbd5e1;   /* Slightly softer for paragraph text */
+}
+
+.card strong {
+    color: #ffffff;   /* Bright white for labels */
+}
+.badge {
+    font-weight: 600;
+    padding: 6px 10px;
+}

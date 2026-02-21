@@ -14,6 +14,9 @@ from app.services.analytics_service import (
     get_ip_profile
 )
 from app.services.analytics_service import get_overview_detailed
+from app.services.analytics_service import get_alert_investigation
+from app.services.analytics_service import get_top_users
+from app.services.analytics_service import get_threat_intel
 
 api_blueprint = Blueprint("api", __name__)
 
@@ -101,3 +104,15 @@ def alerts():
 @api_blueprint.route("/overview-detailed", methods=["GET"])
 def overview_detailed():
     return jsonify(get_overview_detailed())
+
+@api_blueprint.route("/investigation/<int:alert_id>", methods=["GET"])
+def investigation_data(alert_id):
+    return jsonify(get_alert_investigation(alert_id))
+
+@api_blueprint.route("/top-users", methods=["GET"])
+def top_users():
+    return jsonify(get_top_users())
+
+@api_blueprint.route("/threat-intel/<ip>", methods=["GET"])
+def threat_intel(ip):
+    return jsonify(get_threat_intel(ip))

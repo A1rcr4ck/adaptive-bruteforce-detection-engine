@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="fade-page">
+<h2 class="mb-4">Attack Analytics</h2>
+
+<div class="row mb-4">
+    <div class="col-md-6">
+        <div class="card p-3">
+            <h5>Attack Distribution</h5>
+            <canvas id="attackPie"></canvas>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="card p-3">
+            <h5>Top Targeted Users</h5>
+            <canvas id="topUsersChart"></canvas>
+        </div>
+        <div class="card p-3">
+            <h5>Top Attacking IPs</h5>
+            <canvas id="topIpsAnalytics"></canvas>
+        </div>
+    </div>
+    
+</div>
+</div>
+
+<div class="card p-3">
+    <h5>Failed Attempts Timeline</h5>
+    <canvas id="timelineChart"></canvas>
+</div>
+
+<script src="{{ url_for('static', filename='js/analytics.js') }}"></script>
+</div>
+
+{% endblock %}
