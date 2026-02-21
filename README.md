@@ -84,3 +84,111 @@ This simulates enterprise SIEM behavior.
 ---
 
 ## 🏗 Architecture
+Logs → Parser → Detection Engine → Alert Manager → SQLite
+↓
+REST API (Flask)
+↓
+SOC Web Dashboard
+
+
+---
+
+## 🗂 Project Structure
+
+
+adaptive-bruteforce-detection-engine/
+│
+├── core/
+│ ├── log_parser.py
+│ ├── brute_force_detector.py
+│ ├── spray_detector.py
+│ ├── baseline_detector.py
+│ ├── alert_manager.py
+│ ├── ip_profile_manager.py
+│ └── health_check.py
+│
+├── app/
+│ ├── routes/
+│ ├── services/
+│ ├── templates/
+│ └── static/
+│
+├── database/
+│ └── soc_engine.db
+│
+├── scripts/
+│ └── run_detection.py
+│
+├── run.py
+├── config.py
+└── README.md
+
+
+---
+
+## 🛠 Tech Stack
+
+- Python 3
+- Flask
+- SQLite
+- Pandas
+- Regex
+- Bootstrap 5
+- Chart.js
+- JavaScript (Vanilla)
+
+---
+
+## 🔌 REST API Endpoints
+
+### Health & Overview
+- GET /api/health
+- GET /api/overview
+- GET /api/overview-detailed
+
+### Alerts
+- GET /api/alerts
+- GET /api/alerts?severity=High
+- GET /api/alerts?status=OPEN
+- GET /api/alert/<id>
+- POST /api/resolve/<id>
+
+### Analytics
+- GET /api/failed-trend
+- GET /api/top-ips
+- GET /api/top-users
+- GET /api/attack-distribution
+
+### Investigation & Threat Intel
+- GET /api/investigation/<id>
+- GET /api/threat-intel/<ip>
+
+---
+
+## ⚙ How To Run Locally
+
+1️⃣ Clone the repository
+
+git clone https://github.com/yourusername/adaptive-bruteforce-detection-engine.git
+cd adaptive-bruteforce-detection-engine
+
+2️⃣ Create virtual environment
+
+python -m venv venv
+source venv/bin/activate  # Windows: venv\Scripts\activate
+
+3️⃣ Install dependencies
+
+pip install -r requirements.txt
+
+4️⃣ Run detection engine
+
+python -m scripts.run_detection
+
+5️⃣ Start Flask app
+
+python run.py
+
+Open:
+
+http://127.0.0.1:5000
