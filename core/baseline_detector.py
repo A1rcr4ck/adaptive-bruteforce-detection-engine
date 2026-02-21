@@ -99,16 +99,16 @@ def generate_alert(ip, hour, count, mean, std_dev):
     confidence = min(1.0, (count - mean) / (std_dev + 1))
     risk_score = min(100, int(count * 8 + std_dev * 5))
 
-    return {
-        "attack_type": "Anomalous Login Activity",
-        "ip": ip,
-        "start_time": hour.isoformat(),
-        "end_time": hour.isoformat(),
-        "confidence": confidence,
-        "risk_score": risk_score,
-        "severity": "High" if risk_score > 70 else "Medium",
-        "mitre_mapping": "T1110"
-    }
+    # return {
+    #     "attack_type": "Anomalous Login Activity",
+    #     "ip": ip,
+    #     "start_time": hour.isoformat(),
+    #     "end_time": hour.isoformat(),
+    #     "confidence": confidence,
+    #     "risk_score": risk_score,
+    #     "severity": "High" if risk_score > 70 else "Medium",
+    #     "mitre_mapping": "T1110"
+    # }
 
 
 def save_alert(alert):
