@@ -1,10 +1,7 @@
 import sqlite3
 from datetime import datetime
 import statistics
-
-DB_PATH = "database/soc_engine.db"
-
-STD_DEV_MULTIPLIER = 2
+from config import DB_PATH, STD_DEV_MULTIPLIER
 
 
 def fetch_failed_events():

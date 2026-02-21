@@ -1,10 +1,6 @@
 import sqlite3
 from datetime import datetime, timedelta
-
-DB_PATH = "database/soc_engine.db"
-
-FAILED_THRESHOLD = 5
-TIME_WINDOW_MINUTES = 5
+from config import DB_PATH, FAILED_THRESHOLD, TIME_WINDOW_MINUTES
 
 
 def fetch_failed_events():

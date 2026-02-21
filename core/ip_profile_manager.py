@@ -1,7 +1,6 @@
 import sqlite3
 from datetime import datetime
-
-DB_PATH = "database/soc_engine.db"
+from config import DB_PATH, FAILED_ATTEMPT_WEIGHT, UNIQUE_USER_WEIGHT
 
 
 def fetch_ip_statistics():
@@ -26,7 +25,7 @@ def fetch_ip_statistics():
 
 
 def calculate_risk_score(total_attempts, failed_attempts, unique_users):
-    score = (failed_attempts * 2) + (unique_users * 5)
+    score = (failed_attempts * FAILED_ATTEMPT_WEIGHT) + (unique_users * UNIQUE_USER_WEIGHT)
     return min(100, score)
 
 
