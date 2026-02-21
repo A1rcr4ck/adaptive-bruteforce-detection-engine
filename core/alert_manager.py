@@ -1,5 +1,6 @@
 import sqlite3
 from datetime import datetime
+from core.logger import logger
 
 DB_PATH = "database/soc_engine.db"
 
@@ -54,4 +55,4 @@ def process_alerts(alerts):
             save_alert(alert)
             saved_count += 1
 
-    print(f"{saved_count} new alerts saved.")
+    logger.info(f"{saved_count} new alerts saved.")
